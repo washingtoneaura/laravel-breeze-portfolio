@@ -28,23 +28,30 @@
     <body class="font-sans antialiased bg-gray-100 dark:bg-gray-900">
          <div class="min-h-screen">
              <!-- Navbar -->
-             <div class="bg-custom-navy text-white">
-                <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-custom-top-menu" x-data="{ open: false }">
+                <nav class="w-full px-4 sm:px-6 lg:px-8">
                     <div class="flex items-center justify-between h-16">
                         <!-- Logo or Brand -->
                         <div class="flex-shrink-0">
                             <a href="/" class="text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
                         </div>
                         <!-- Navigation Links -->
-                        <div class="ml-auto flex items-center">
-                            <div class="hidden md:block">
-                                <div class="ml-10 flex items-baseline space-x-4">
-                                    <a href="/about" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
-                                    <a href="/portfolio" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Portfolio</a>
-                                    <a href="/blog" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blog</a>
-                                    <a href="/contact" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
-                                </div>
+                        <div :class="{ 'hidden': !open, 'flex': open }" class="md:flex items-center">
+                            <div class="ml-10 flex items-baseline space-x-4">
+                                <a href="/about" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+                                <a href="/portfolio" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Portfolio</a>
+                                <a href="/blog" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blog</a>
+                                <a href="/contact" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
                             </div>
+                        </div>
+                        <!-- Hamburger Icon -->
+                        <div class="md:hidden">
+                            <button @click="open = !open" class="hamburger">
+                                <!-- Hamburger icon (three horizontal lines) -->
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
                         </div>
                     </div>
                 </nav>

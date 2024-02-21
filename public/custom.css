@@ -3,6 +3,13 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #CAF0F8;
 }
+.bg-custom-top-menu {
+    background-color: #0d2842;
+    width: 100%;
+}
+.bg-custom-top-menu a{
+    color: #ffffff;
+}
 .home-heading {
     color: #03045E;
     font-size: 2em; 
@@ -43,7 +50,7 @@ body {
 }
 .home-paragraph2{
     color: #0077B6;
-    font-size: 1em; 
+    font-size: 1.5em; 
     font-weight: bolder;
 }
 .home-right-container img{
@@ -53,4 +60,59 @@ body {
     margin: 0 auto;
     border-radius: 10%;
     float: inline-start;
+    padding-top: 2em;
+}
+/* Media query for mobile devices */
+@media (max-width:  821px) {
+    .home-top-container {
+        flex-direction: column;
+    }
+    .home-left-container,
+    .home-right-container {
+        flex:  0  0  100%;
+        max-width:  100%;
+    }
+    .bg-custom-top-menu{
+        width: 100%;
+        margin: 0%;
+    }
+}
+/* Hamburger icon styles */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width:  2rem;
+    height:  2rem;
+    cursor: pointer;
+}
+.hamburger span {
+    width:  2rem;
+    height:  0.25rem;
+    background: white;
+    border-radius:  10px;
+    transition: all  0.3s linear;
+    position: relative;
+    transform-origin:  1px;
+}
+.nav-links.active {
+    transform: translateY(0); /* Show the menu when active */
+}
+/* Responsive menu styles */
+@media (max-width:   821px) {
+    .top-menu {
+        display: none; /* Hide the full menu on mobile */
+    }
+    .hamburger {
+        display: flex; /* Show the hamburger menu on mobile */
+    }
+    .top-menu.active {
+        display: flex;
+        flex-direction: column;
+        /* Add other styles for the active menu */
+    }
+    .bg-custom-top-menu{
+        width: 100%;
+        margin: 0%;
+    }
 }
