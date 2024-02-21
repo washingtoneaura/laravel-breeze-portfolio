@@ -7,6 +7,8 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/js/app.js',
+                'public/custom.css', // Add this line to include your custom CSS
+
             ],
             // Specify the output directory for the built files.
             // Make sure it matches the Laravel public directory.

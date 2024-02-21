@@ -19,6 +19,9 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         -->
 
+        <!-- custom.css -->
+        <link rel="stylesheet" href="{{ asset('custom.css') }}">
+
         <!-- Tailwind CSS -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
