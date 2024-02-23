@@ -6,6 +6,8 @@ body {
 .bg-custom-top-menu {
     background-color: #0d2842;
     width: 100%;
+    padding:  0;
+    margin:  0;
 }
 .bg-custom-top-menu a{
     color: #ffffff;
@@ -62,21 +64,6 @@ body {
     float: inline-start;
     padding-top: 2em;
 }
-/* Media query for mobile devices */
-@media (max-width:  821px) {
-    .home-top-container {
-        flex-direction: column;
-    }
-    .home-left-container,
-    .home-right-container {
-        flex:  0  0  100%;
-        max-width:  100%;
-    }
-    .bg-custom-top-menu{
-        width: 100%;
-        margin: 0%;
-    }
-}
 /* Hamburger icon styles */
 .hamburger {
     display: flex;
@@ -98,21 +85,37 @@ body {
 .nav-links.active {
     transform: translateY(0); /* Show the menu when active */
 }
-/* Responsive menu styles */
-@media (max-width:   821px) {
+/* Media query for mobile devices */
+@media (max-width:  821px) {
+    .home-top-container {
+        flex-direction: column;
+    }
+    .home-left-container,
+    .home-right-container {
+        flex:  0  0  100%;
+        max-width:  100%;
+    }
+    .bg-custom-top-menu {
+        width:  100%;
+        margin:  0; 
+        padding: 0;
+    }
     .top-menu {
-        display: none; /* Hide the full menu on mobile */
+        display: none; 
     }
     .hamburger {
-        display: flex; /* Show the hamburger menu on mobile */
+        display: flex; 
+        justify-content: flex-end; 
     }
     .top-menu.active {
         display: flex;
         flex-direction: column;
-        /* Add other styles for the active menu */
     }
-    .bg-custom-top-menu{
-        width: 100%;
-        margin: 0%;
+    /* Ensure navigation links are hidden and displayed correctly when the hamburger icon is clicked */
+    .md\:flex {
+        display: none;
+    }
+    .md\:flex.active {
+        display: flex;
     }
 }
